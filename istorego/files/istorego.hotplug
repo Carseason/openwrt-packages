@@ -1,3 +1,0 @@
-if [ "$ACTION" = "add" -o "$ACTION" = "remove" ]; then
-    istorego blockChange
-fi
