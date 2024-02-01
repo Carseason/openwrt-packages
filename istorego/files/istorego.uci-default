@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$PKG_UPGRADE" = 1 ]; then
+    /etc/init.d/istorego enable
+    /etc/init.d/istorego start
+fi
+
+exit 0
