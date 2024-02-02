@@ -10,12 +10,11 @@ include $(TOPDIR)/rules.mk
 PKG_ARCH_istorego:=$(ARCH)
 
 PKG_NAME:=istorego
-PKG_VERSION:=0.0.1
+PKG_VERSION:=0.0.2
 PKG_RELEASE:=1
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/Carseason/openwrt-packages/releases/download/prebuilt/
-PKG_HASH:=e137f6c81cb7ee97080bac8aae3c5fbdb0686b2f0eed0782a4468f7dbac78059
-
+PKG_HASH:=15d9aadba0bb3926e18372f52d4b6270640a19e0509e41962e43d0eb76e19ce6
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
 PKG_BUILD_PARALLEL:=1
@@ -28,7 +27,8 @@ define Package/$(PKG_NAME)
 	CATEGORY:=Network
 	SUBMENU:=Web Servers/Proxies
 	TITLE:=iStoreGo
-	DEPENDS:=@(x86_64||aarch64) +shadow-utils +shadow-useradd +mount-utils +block-mount +lsblk +e2fsprogs +parted +smartmontools +smartd +mdadm +ip-full +ubus +uci +bash
+	PKGARCH:=all
+	URL:=https://github.com/Carseason/openwrt-packages
 endef
 
 define Package/$(PKG_NAME)/description
