@@ -27,7 +27,7 @@ define Package/$(PKG_NAME)
 	CATEGORY:=Network
 	SUBMENU:=Web Servers/Proxies
 	TITLE:=iStoreGo
-	PKGARCH:=@(x86_64||aarch64)
+	PKGARCH:=all
 	URL:=https://github.com/Carseason/openwrt-packages
 endef
 
