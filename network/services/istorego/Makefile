@@ -10,11 +10,11 @@ include $(TOPDIR)/rules.mk
 PKG_ARCH_istorego:=$(ARCH)
 
 PKG_NAME:=istorego
-PKG_VERSION:=0.0.5
+PKG_VERSION:=0.0.6
 PKG_RELEASE:=1
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/Carseason/openwrt-packages/releases/download/prebuilt/
-PKG_HASH:=c61f54b8976a0e1e2176c0e76668533343aa73643fa8d8154415e346e6ddc7ce
+PKG_HASH:=770cde4a27c28baf0a76247187b5c8df18bf785a857fd7bc7f35f9de20dcdc29
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
 PKG_BUILD_PARALLEL:=1

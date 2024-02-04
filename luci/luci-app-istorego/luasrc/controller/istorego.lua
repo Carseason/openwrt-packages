@@ -3,7 +3,7 @@ local http = require "luci.http"
 module("luci.controller.istorego", package.seeall)
 
 function index()
-    entry({"admin", "istorego"}, call("istorego_index"), _("iStoreGo"), 30).leaf = true
+    entry({"admin", "istorego"}, call("istorego_index"), _("iStoreGo"), 32).leaf = true
 end
 
 function istorego_index()
