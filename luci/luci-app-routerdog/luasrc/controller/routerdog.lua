@@ -6,6 +6,7 @@ function index()
     entry({"admin", "routerdog_api", "status"}, call("routerdog_api_status"))
     entry({"admin", "routerdog_api", "upload-bg"}, call("routerdog_api_uploadbg"))
     entry({"admin", "routerdog_api", "setting"}, call("routerdog_api_setting"))
+    entry({"admin", "routerdog_api", "routergo"}, call("routerdog_api_routergo"))
 end
 
 local function user_id()
@@ -78,6 +79,9 @@ function submitRouterdogSettingData(req)
     if req.hiddenUseApp ~= nil then
         uci:set("routerdog","@routerdog[0]","hiddenUseApp",req.hiddenUseApp)
     end
+     if req.hiddenDockerApp ~= nil then
+        uci:set("routerdog","@routerdog[0]","hiddenDockerApp",req.hiddenDockerApp)
+    end
     uci:commit("routerdog")  
 end
 function routerdog_api_setting()
@@ -98,6 +102,41 @@ function routerdog_api_setting()
         submitRouterdogSettingData(req)
     end
     local result = getRouterdogSettingData()
+    local response = {
+            success = 0,
+            result = result,
+    } 
+    luci.http.write_json(response)
+end
+
+
+function routerdog_api_routergo()
+    local http = require "luci.http"
+    local uci = require "luci.model.uci".cursor()
+	http.prepare_content("application/json")
+	local method = http.getenv("REQUEST_METHOD")
+	if method == "post" or method == "POST" then
+        local content = http.content()
+		local jsonc = require "luci.jsonc"
+		local json_parse = jsonc.parse
+		local req = json_parse(content)
+		if req == nil or next(req) == nil then
+			luci.http.write_json({
+				error =  "invalid request"
+			})
+			return 
+		end
+        if req.path ~= nil then
+            uci:set("routergo","@routergo[0]","path",req.path)
+        end
+        uci:commit("routergo")  
+        luci.util.exec("/etc/init.d/routergo start")
+    end
+
+    local path   = uci:get_first("routergo", "routergo", "path")
+    local result = {
+        path    = path,
+    }
     local response = {
             success = 0,
             result = result,
