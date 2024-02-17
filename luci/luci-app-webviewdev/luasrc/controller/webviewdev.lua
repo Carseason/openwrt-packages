@@ -1,7 +1,7 @@
 module("luci.controller.webviewdev", package.seeall)
 
 function index()
-    entry({"admin", "webviewdev"}, template("webviewdev/index"), _("webviewdev"), 1).leaf = true
+    entry({"admin", "webviewdev"}, call("webviewdev_template"), _("webviewdev"), 5).leaf = true
 end
 
 local function user_id()
@@ -28,7 +28,6 @@ function get_params()
     }
     return data
 end
-
 function webviewdev_template()
     luci.template.render("webviewdev/main", get_params())
 end
