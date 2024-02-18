@@ -52,7 +52,46 @@ function routerdog_api_status()
     luci.http.prepare_content("application/json")
     luci.http.write_json(response)
 end
+function routerdog_api_uploadbg()
+    local uci = require "uci"
+    local x = uci.cursor()
+    local fd
+    local path
+    local success = 0
+    local tmpdir = "/www/luci-static/routerdog/image"
+    local filename = ""
+    
+    local opf = io.open(tmpdir,"r+")
+    if opf then 
+       opf:close()
+    else
+        local sys  = require "luci.sys"
+        sys.exec("mkdir "..tmpdir)
+    end
 
+    luci.http.setfilehandler(
+        function(meta, chunk, eof)
+            if not fd then
+                filename = meta.file
+                path = tmpdir .. "/bg.gif" 
+                fd = io.open(path, "w")
+            end
+            if chunk then
+                fd:write(chunk)
+            end
+            if eof then
+                fd:close()
+                finished = true
+            end
+        end
+    )
+    luci.http.formvalue("file")
+    local response = {
+        success = success,
+    }
+    luci.http.prepare_content("application/json")
+    luci.http.write_json(response)
+end
 
 function getRouterdogSettingData()
     local uci  = require "luci.model.uci".cursor()
