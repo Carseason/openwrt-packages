@@ -56,11 +56,10 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/uci-defaults $(1)/etc/hotplug.d/block $(1)/etc/config
+	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/uci-defaults $(1)/etc/config
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/routergo.$(PKG_ARCH_routergo) $(1)/usr/sbin/routergo
 	$(INSTALL_BIN) ./files/routergo.init $(1)/etc/init.d/routergo
 	$(INSTALL_BIN) ./files/routergo.uci-default $(1)/etc/uci-defaults/09-routergo
-	$(INSTALL_BIN) ./files/routergo.hotplug $(1)/etc/hotplug.d/block/09-routergo
 	$(INSTALL_CONF) ./files/routergo.config $(1)/etc/config/routergo
 endef
 
