@@ -15,6 +15,7 @@
     <%+tasks/embed%>
     <script>
         (function(){
+            window.Hostname     =   "<%=luci.sys.hostname()%>"
             var pathe_prefix    =   "<%=prefix%>"
             window.path_base    =   pathe_prefix
             window.pkg_version  =   "<%# PKG_VERSION %>"
