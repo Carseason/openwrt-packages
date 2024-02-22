@@ -168,7 +168,8 @@ function routerdog_api_routergo()
         if req.path ~= nil then
             uci:set("routergo","@routergo[0]","path",req.path)
         end
-        uci:commit("routergo")  
+        uci:commit("routergo") 
+        luci.util.exec("/etc/init.d/routergo stop") 
         luci.util.exec("/etc/init.d/routergo start")
     end
 

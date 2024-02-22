@@ -7,12 +7,7 @@ get_config() {
 	config_get path $1 path ""
 }
 
-routergo_prepare() {
-    killall routergo 2>/dev/null
-}
-
 start_service() { 
-	routergo_prepare
 	config_load routergo
 	config_foreach get_config routergo
 	procd_open_instance

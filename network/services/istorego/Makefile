@@ -11,7 +11,7 @@ PKG_ARCH_istorego:=$(ARCH)
 
 PKG_NAME:=istorego
 PKG_VERSION:=0.0.6
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/Carseason/openwrt-packages/releases/download/prebuilt/
 PKG_HASH:=770cde4a27c28baf0a76247187b5c8df18bf785a857fd7bc7f35f9de20dcdc29
