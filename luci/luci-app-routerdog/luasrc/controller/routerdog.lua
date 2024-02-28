@@ -1,7 +1,9 @@
 module("luci.controller.routerdog", package.seeall)
 
 function index()
-    entry({"admin", "routerdog"}, template("routerdog/index"), _("RouterDog"), 1).leaf = true
+    if nixio.fs.access("/usr/lib/lua/luci/view/routerdog/main.htm") then
+        entry({"admin", "routerdog"}, template("routerdog/index"), _("RouterDog"), 1).leaf = true
+    end
     entry({"admin", "routerdog_api"}, call("redirect_index"))
     entry({"admin", "routerdog_api", "status"}, call("routerdog_api_status"))
     entry({"admin", "routerdog_api", "upload-bg"}, call("routerdog_api_uploadbg"))
