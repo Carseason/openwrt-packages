@@ -164,7 +164,7 @@ function routergo_backend()
       if key == "Transfer-Encoding" and val == "chunked" then
         chunked = 1
       end
-      if key ~= "Connection" and key ~= "Transfer-Encoding" and key ~= "Content-Length" then 
+      if key ~= "Connection" and key ~= "Transfer-Encoding" then 
         http.header(key, val)
       end
     end
