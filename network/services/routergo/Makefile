@@ -14,7 +14,7 @@ PKG_VERSION:=0.12.3
 PKG_RELEASE:=
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/Carseason/openwrt-packages/releases/download/prebuilt/
-PKG_HASH:=f41f00da4edc7da17a9fbb5b4349b908367074ff334e86ea1420ddbcc81eae3c
+PKG_HASH:=d922bc6e2b72c15b3a606a3b0f97f7c2040939a8fd1813600436df15aee900ea
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
 PKG_BUILD_PARALLEL:=1
