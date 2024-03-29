@@ -10,11 +10,11 @@ include $(TOPDIR)/rules.mk
 PKG_ARCH_routergo:=$(ARCH)
 
 PKG_NAME:=routergo
-PKG_VERSION:=0.12.5
+PKG_VERSION:=0.12.6
 PKG_RELEASE:=
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/Carseason/openwrt-packages/releases/download/prebuilt/
-PKG_HASH:=0eeb9d571ad42da56ea597855f47f7f6816c6559f4a07848c8b087256ff4b44f
+PKG_HASH:=72a6a1824eb453b7b78360389c8f3a1ce79d18ff8045ba5b1e52421b2c026eb7
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
 PKG_BUILD_PARALLEL:=1
