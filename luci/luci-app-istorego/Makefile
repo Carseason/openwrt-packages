@@ -9,7 +9,7 @@ LUCI_TITLE:=LuCI support for istorego
 LUCI_DEPENDS:=+docker +luci-lib-taskd
 LUCI_PKGARCH:=all
 
-PKG_VERSION:=0.0.2
+PKG_VERSION:=0.0.3
 # PKG_RELEASE MUST be empty for luci.mk
 PKG_RELEASE:=
 
