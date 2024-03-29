@@ -1,1 +1,0 @@
-import{a6 as o,a0 as r,Z as n,_ as s,aH as t,au as c}from"./index.js?v=W-TS2S5Y";const _={};function d(e,f){const a=c;return r(),n(a,{style:{"--n-border-radius":"0.5rem",overflow:"hidden"},class:"istorego-card"},{default:s(()=>[t(e.$slots,"default",{},void 0,!0)]),_:3})}const u=o(_,[["render",d],["__scopeId","data-v-af326bab"]]);export{u as C};

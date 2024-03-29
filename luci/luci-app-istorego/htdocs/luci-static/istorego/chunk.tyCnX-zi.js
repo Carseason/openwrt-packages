@@ -1,1 +1,0 @@
-import{aW as r}from"./index.js?v=W-TS2S5Y";let i=!1;function t(){if(r&&window.CSS&&!i&&(i=!0,"registerProperty"in(window==null?void 0:window.CSS)))try{CSS.registerProperty({name:"--n-color-start",syntax:"<color>",inherits:!1,initialValue:"#0000"}),CSS.registerProperty({name:"--n-color-end",syntax:"<color>",inherits:!1,initialValue:"#0000"})}catch(e){}}export{t as u};
