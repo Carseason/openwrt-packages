@@ -44,6 +44,7 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
+	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ffmpeg.$(PKG_ARCH_ffmpeg) $(1)/usr/sbin/ffmpeg
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ffprobe.$(PKG_ARCH_ffmpeg) $(1)/usr/sbin/ffprobe
 endef
