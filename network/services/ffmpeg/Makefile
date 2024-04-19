@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_ARCH_ffmpeg:=$(ARCH)
 
-PKG_NAME:=ffmpeg-static
+PKG_NAME:=ffmpeg
 PKG_VERSION:=0.0.1
 PKG_RELEASE:=
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
