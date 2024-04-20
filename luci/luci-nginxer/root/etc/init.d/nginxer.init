@@ -1,0 +1,14 @@
+#!/bin/sh /etc/rc.common
+
+START=93
+USE_PROCD=1
+ 
+start_service() { 
+	/etc/init.d/uhttpd disable
+	/etc/init.d/nginx enabled
+}
+
+stop_service() {
+	/etc/init.d/uhttpd enabled
+	/etc/init.d/nginx disable
+}
