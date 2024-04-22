@@ -1,6 +1,0 @@
-#!/bin/sh
-
-/etc/init.d/uhttpd disable
-/etc/init.d/nginx enabled
-/etc/init.d/nginx start
-exit 0
