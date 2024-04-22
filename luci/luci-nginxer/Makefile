@@ -8,12 +8,16 @@ include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=Nginxer
 LUCI_DESCRIPTION:=Standard OpenWrt set including full admin with ppp support and the default Bootstrap theme
-PKG_VERSION:=0.0.1
+PKG_VERSION:=0.0.2
 PKG_RELEASE:=
 LUCI_DEPENDS:=+luci-nginx
 
 define Package/nginxer/conffiles
 /etc/config/nginx
+endef
+
+define Package/nginxer/Uninstall
+	/etc/init.d/uhttpd enabled
 endef
 
 include $(TOPDIR)/feeds/luci/luci.mk
