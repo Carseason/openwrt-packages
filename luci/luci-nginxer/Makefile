@@ -12,6 +12,13 @@ PKG_VERSION:=0.0.1
 PKG_RELEASE:=1
 LUCI_DEPENDS:=+luci-nginx
 
+define Package/luci-nginxer/postrm
+	#!/bin/sh
+	/etc/init.d/uhttpd enabled
+	/etc/init.d/uhttpd reload
+	exit 0
+endef
+
 include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
