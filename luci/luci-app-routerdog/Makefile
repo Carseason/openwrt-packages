@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=RouterDog
-PKG_VERSION:=1.3.1
+PKG_VERSION:=1.4.0
 PKG_RELEASE:=
 LUCI_DEPENDS:=+routergo +luci-app-store +luci-lib-taskd
 LUCI_MINIFY_CSS:=0
@@ -17,6 +17,12 @@ define Package/luci-app-routerdog/conffiles
 /etc/config/routerdog
 /www/luci-static/routerdog/image/bg.gif
 /www/luci-static/routerdog/image/login.gif
+endef
+
+define Package/luci-nginxer/postrm
+#!/bin/sh
+rm -f /tmp/luci-indexcache
+exit 0
 endef
 
 include $(TOPDIR)/feeds/luci/luci.mk
