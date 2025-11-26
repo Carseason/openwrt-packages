@@ -24,10 +24,9 @@ include $(INCLUDE_DIR)/package.mk
 
 define Package/$(PKG_NAME)
 	SECTION:=net
-	CATEGORY:=Network
-	SUBMENU:=Web Servers/Proxies
+	CATEGORY:=System
+	SUBMENU:=
 	TITLE:=AiHelper
-	DEPENDS:=@(x86_64||aarch64||arm)
 	URL:=https://github.com/Carseason/openwrt-packages
 endef
 
