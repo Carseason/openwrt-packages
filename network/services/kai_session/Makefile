@@ -48,7 +48,7 @@ define Build/Configure
 endef
 
 define Build/Compile
-	$(STAGING_DIR_HOST)/bin/patchelf --remove-needed libc.musl-x86_64.so.1 --remove-needed libc.musl-aarch64.so.1 $(PKG_BUILD_DIR)/kai.$(PKG_ARCH_kai_session)
+	$(STAGING_DIR_HOST)/bin/patchelf --remove-needed libc.musl-x86_64.so.1 --remove-needed libc.musl-aarch64.so.1 $(PKG_BUILD_DIR)/kai_session.$(PKG_ARCH_kai_session)
 endef
 
 define Package/$(PKG_NAME)/install
