@@ -14,7 +14,7 @@ PKG_VERSION:=0.0.1
 PKG_RELEASE:=0
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/Carseason/openwrt-packages/releases/download/prebuilt/
-PKG_HASH:=ac0f198049f3a9c0483c88d5bd48531b3ca0d85a7320291e94d7054afd4ea412
+PKG_HASH:=efef8ae3360a682c215b44a908a71480ca064eadc0380f28f2f400edc84807fe
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
 PKG_BUILD_PARALLEL:=1
@@ -57,9 +57,6 @@ endef
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/uci-defaults $(1)/etc/config
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/kai_session.$(PKG_ARCH_kai) $(1)/usr/sbin/kai_session
-	$(INSTALL_BIN) ./files/kai.init $(1)/etc/init.d/kai
-	$(INSTALL_BIN) ./files/kai.uci-default $(1)/etc/uci-defaults/09-kai
-	$(INSTALL_CONF) ./files/kai.config $(1)/etc/config/kai
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
