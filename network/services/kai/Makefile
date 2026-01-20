@@ -45,7 +45,7 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/uci-defaults $(1)/etc/config
+	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/config
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/kai.$(PKG_ARCH_kai) $(1)/usr/sbin/kai_bin
 	$(INSTALL_BIN) ./files/kai.init $(1)/etc/init.d/kai
 	$(INSTALL_CONF) ./files/kai.config $(1)/etc/config/kai
