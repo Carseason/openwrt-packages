@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.0.1
-PKG_RELEASE:=
+PKG_RELEASE:=2
 
 LUCI_TITLE:=LuCI support for ghttpd
 LUCI_PKGARCH:=all
