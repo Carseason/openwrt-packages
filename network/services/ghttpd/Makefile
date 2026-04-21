@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_ARCH_ghttpd:=$(ARCH)
 
-PKG_NAME:=gttpd
+PKG_NAME:=ghttpd
 PKG_VERSION:=0.0.1
 PKG_RELEASE:=
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
