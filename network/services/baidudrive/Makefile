@@ -49,7 +49,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d $(1)/etc/config
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/baidudrive.$(PKG_ARCH_baidudrive) $(1)/usr/sbin/baidudrive
 	$(INSTALL_BIN) ./files/baidudrive.init $(1)/etc/init.d/baidudrive
-	$(INSTALL_BIN) ./files/baidudrive.uci-default $(1)/etc/uci-defaults/09-routergo
+	$(INSTALL_BIN) ./files/baidudrive.uci-default $(1)/etc/uci-defaults/09-baidudrive
 	$(INSTALL_CONF) ./files/baidudrive.config $(1)/etc/config/baidudrive
 endef
 
