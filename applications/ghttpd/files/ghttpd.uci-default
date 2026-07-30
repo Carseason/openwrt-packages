@@ -1,5 +1,12 @@
 #!/bin/sh
 
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@ghttpd[-1]
+	add ucitrack ghttpd
+	set ucitrack.@ghttpd[-1].init=ghttpd
+	commit ucitrack
+EOF
+
 uci -q get ghttpd.@ghttpd[0] >/dev/null || uci add ghttpd ghttpd
 uci set ghttpd.@ghttpd[0].enabled='1'
 uci -q get ghttpd.@ghttpd[0].port >/dev/null || uci set ghttpd.@ghttpd[0].port='80'
