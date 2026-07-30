@@ -7,12 +7,7 @@ uci -q batch <<-EOF >/dev/null
 	commit ucitrack
 EOF
 
-uci -q get ghttpd.@ghttpd[0] >/dev/null || uci add ghttpd ghttpd
-uci set ghttpd.@ghttpd[0].enabled='1'
-uci -q get ghttpd.@ghttpd[0].port >/dev/null || uci set ghttpd.@ghttpd[0].port='80'
-uci commit ghttpd
-
 /etc/init.d/ghttpd enable
-/etc/init.d/ghttpd restart
+/etc/init.d/ghttpd start
 
 exit 0
