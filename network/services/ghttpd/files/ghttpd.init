@@ -5,7 +5,7 @@ USE_PROCD=1
  
 get_config() {
 	config_get enabled $1 enabled "0"
-	config_get port $1 port "8333"
+	config_get port $1 port "80"
 }
 
 start_service() { 

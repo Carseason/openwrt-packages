@@ -3,7 +3,7 @@ local util  = require "luci.util"
 local sys   = require "luci.sys"
 local uci   = require "luci.model.uci".cursor()
 local running = (sys.call("pidof ghttpd >/dev/null") == 0)
-local port = "8333"
+local port = "80"
 
 uci:foreach("ghttpd", "ghttpd", function(s)
     port = s.port or port

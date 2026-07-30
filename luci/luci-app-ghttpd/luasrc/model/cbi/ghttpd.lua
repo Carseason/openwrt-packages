@@ -13,8 +13,7 @@ e.rmempty=false
 
 o = s:option(Value, "port", translate("HTTP Port").."<b>*</b>")
 o.rmempty = false
-o.default = "8333"
+o.default = "80"
 o.datatype = "port"
 
 return m
-
