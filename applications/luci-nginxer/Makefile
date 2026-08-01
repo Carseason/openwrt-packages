@@ -14,8 +14,10 @@ LUCI_DEPENDS:=+luci-nginx
 
 define Package/luci-nginxer/postrm
 #!/bin/sh
-/etc/init.d/uhttpd enabled
-/etc/init.d/uhttpd start
+for service in uhttpd nginx; do
+	[ -x "/etc/init.d/$service" ] || continue
+	/etc/init.d/$service enabled && /etc/init.d/$service start
+done
 exit 0
 endef
 
