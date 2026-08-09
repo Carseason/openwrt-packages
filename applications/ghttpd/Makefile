@@ -49,6 +49,15 @@ if [ -z "$${IPKG_INSTROOT}" ]; then
 fi
 endef
 
+define Package/$(PKG_NAME)/postrm
+#!/bin/sh
+for service in uhttpd nginx; do
+	[ -x "/etc/init.d/$$service" ] || continue
+	"/etc/init.d/$$service" enabled && "/etc/init.d/$$service" restart
+done
+exit 0
+endef
+
 define Build/Configure
 endef
 
